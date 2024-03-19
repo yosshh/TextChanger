@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/namaste-yash/static/css/main.76aec624.css",
+    "main.js": "/namaste-yash/static/js/main.db9bc58d.js",
+    "static/js/453.2a80f323.chunk.js": "/namaste-yash/static/js/453.2a80f323.chunk.js",
+    "index.html": "/namaste-yash/index.html",
+    "main.76aec624.css.map": "/namaste-yash/static/css/main.76aec624.css.map",
+    "main.db9bc58d.js.map": "/namaste-yash/static/js/main.db9bc58d.js.map",
+    "453.2a80f323.chunk.js.map": "/namaste-yash/static/js/453.2a80f323.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.76aec624.css",
+    "static/js/main.db9bc58d.js"
+  ]
+}
