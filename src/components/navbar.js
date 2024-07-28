@@ -4,14 +4,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function Navbar(props) {
-  
+  const activeMode = ()=> { 
+    document.body.classList.add('active')
+}
   return (
     <div>
       <nav
         className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}
       >
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/">
+          <Link className="navbar-brand" to="#">
             {props.title}
           </Link>
           <button
@@ -28,13 +30,18 @@ export default function Navbar(props) {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/home">
+                <Link
+                  className="nav-link "
+                  aria-current="page"
+                  onClick={activeMode}
+                  to="/home"
+                >
                   {/* {props.address} */}
                   Home
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/about">
+                <Link className="nav-link active" to="/about">
                   About
                 </Link>
               </li>
@@ -51,29 +58,32 @@ export default function Navbar(props) {
               </button>
             </form> */}
             {/* This will disable the search bar from the navbar. */}
-            <div className={`form-check text-${props.mode==='dark'? 'light' : 'dark'}`}>
+
+            {/* <div
+              className={`form-check text-${
+                props.mode === "dark" ? "light" : "dark"
+              }`}
+            >
               <input
                 className="form-check-input mx-3"
                 type="checkbox"
                 defaultValue=""
                 onClick={props.toggleMode}
                 id="flexCheckDefault"
-              /> 
-              <label className="form-check-label"  htmlFor="flexCheckDefault">
-                Enable Dark Mode
+              />
+              <label className="form-check-label" htmlFor="flexCheckDefault">
+                {props.mode==='light'? "Enable Dark Mode" : "Enable Light Mode"}
               </label>
-            </div>
-            <div className={`form-check text-${props.mode==='dark'? 'light' : 'dark'}`}>
-              <input
-                className="form-check-input mx-3"
-                type="checkbox"
-                defaultValue=""
-                onClick={props.toggleMode}
-                id="flexCheckDefault"
-              /> 
-              <label className="form-check-label"  htmlFor="flexCheckDefault">
-                Enable Pink Mode
-              </label>
+            // </div> */} 
+            {/* This navbar is only for dark and light mode */}
+
+            <div className="d-flex">
+              <div className="bg-primary rounded mx-2" onClick={()=>{props.toggleMode('primary')}} style={{height: '30px', width: '50px', cursor: 'pointer'}}></div>
+              <div className="bg-warning rounded mx-2" onClick={()=>{props.toggleMode('warning')}} style={{height: '30px', width: '50px', cursor: 'pointer'}}></div>
+              <div className="bg-success rounded mx-2" onClick={()=>{props.toggleMode('success')}} style={{height: '30px', width: '50px', cursor: 'pointer'}}></div>
+              <div className="bg-danger rounded mx-2" onClick={()=>{props.toggleMode('danger')}} style={{height: '30px', width: '50px', cursor: 'pointer'}}></div>
+              <div className="bg-dark rounded mx-2" onClick={()=>{props.toggleMode('dark')}} style={{height: '30px', width: '50px', cursor: 'pointer'}}></div>
+              <div className="bg-light rounded mx-2" onClick={()=>{props.toggleMode('light')}} style={{height: '30px', width: '50px', cursor: 'pointer'}}></div>
             </div>
           </div>
         </div>

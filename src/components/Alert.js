@@ -6,7 +6,8 @@ function Alert(props) {
         return lower.charAt(0).toUpperCase()+ lower.slice(1);
     }
   return (
-    props.alert && (
+    <div style={{height:'50px'}}>
+    {props.alert && (
       <div>
         <>
           <div
@@ -24,7 +25,8 @@ function Alert(props) {
           </div>
         </>
       </div>
-    )
+    )}
+    </div>
   );
 }
 export default Alert;
